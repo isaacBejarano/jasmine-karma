@@ -1,31 +1,36 @@
-import { TestBed } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+import { AppComponent } from './app.component'; // UNIT-TEST
+import { TestBed } from '@angular/core/testing'; // INTEGRATION on HTML template
 
-describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [AppComponent],
-    }).compileComponents();
-  });
+// 1. UNIT-TEST
+describe('AppComponent{}', () => {
+  // instance
+  let app = new AppComponent();
 
+  // 1.1. tests outside hooks
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+    expect(app).toBeDefined();
   });
 
+  it(`should have as instance 'app'`, () => {
+    expect(app).toBeInstanceOf(AppComponent);
+  });
+
+  // 1.2. tests within hooks
   it(`should have as title 'test-angular-ten'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
+    app.ngOnInit();
     expect(app.title).toEqual('test-angular-ten');
   });
+});
 
-  // it('should render title', () => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   fixture.detectChanges();
-  //   const compiled = fixture.nativeElement;
-  //   expect(compiled.querySelector('.content span').textContent).toContain(
-  //     'test-angular-ten'
-  //   );
-  // });
+// 2. INTEGRATION TEST
+describe('AppComponent HMTL', () => {
+  it(`should render 'title'`, () => {
+    const fixture = TestBed.createComponent(AppComponent); // fake
+    fixture.detectChanges(); // hook
+    
+    const DOM = fixture.nativeElement; // fake DOM
+    const ref = DOM.querySelector('.content span').textContent; // fake REF
+
+    expect(ref).toContain('test-angular-ten');
+  });
 });
