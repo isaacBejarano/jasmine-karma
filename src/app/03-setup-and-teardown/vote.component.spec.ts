@@ -1,9 +1,9 @@
-import { VoteComponent } from './vote.component'; 
+// import { VoteComponent } from './vote.component'; 
 
-describe('VoteComponent', () => {
-  it('', () => {
-  });
+// describe('VoteComponent', () => {
+//   it('', () => {
+//   });
 
-  it('', () => {
-  });
-});
+//   it('', () => {
+//   });
+// });

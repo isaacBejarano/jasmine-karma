@@ -1,12 +1,12 @@
-import { VoteComponent } from './vote.component'; 
+// import { VoteComponent } from './vote.component'; 
 
-describe('VoteComponent', () => {
-  var component: VoteComponent; 
+// describe('VoteComponent', () => {
+//   var component: VoteComponent; 
 
-  beforeEach(() => {
-    component = new VoteComponent();
-  });
+//   beforeEach(() => {
+//     component = new VoteComponent();
+//   });
 
-  it('', () => {
-  });
-});
+//   it('', () => {
+//   });
+// });
