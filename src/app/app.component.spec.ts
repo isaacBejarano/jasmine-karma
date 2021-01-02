@@ -27,7 +27,7 @@ describe('AppComponent HMTL', () => {
   it(`should render 'title'`, () => {
     const fixture = TestBed.createComponent(AppComponent); // fake
     fixture.detectChanges(); // hook
-    
+
     const DOM = fixture.nativeElement; // fake DOM
     const ref = DOM.querySelector('.content span').textContent; // fake REF
 
