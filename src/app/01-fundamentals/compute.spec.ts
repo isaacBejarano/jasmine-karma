@@ -1,5 +1,3 @@
-// KARMA (testing server, looks for .spec files)
-// JASMINE (testing framework. You need to import it)
 import { compute } from './compute';
 
 describe('compute()', () => {
