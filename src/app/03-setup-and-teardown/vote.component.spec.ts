@@ -11,15 +11,13 @@ describe('VoteComponent{}', () => {
   it(`should increase 'totalVotes' when upvoted`, () => {
     vote.upVote();
 
-    expect(vote.getTotalVotes).toBe(1);
-    console.log(vote.getTotalVotes); // -> totalVotes = 1;
+    expect(vote.getTotalVotes).toBe(1); // log -> totalVotes = 1;
   });
 
   it(`should decrease 'totalVotes' when downvoted`, () => {
     vote.downVote();
 
-    expect(vote.getTotalVotes).toBe(-1);
-    console.log(vote.getTotalVotes); // -> totalVotes = -1;
+    expect(vote.getTotalVotes).toBe(-1); // log -> totalVotes = -1;
   });
 });
 

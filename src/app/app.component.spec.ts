@@ -9,12 +9,12 @@ describe('AppComponent{}', () => {
 
   // 1.1. tests outside hooks
   it('should create the app', () => {
-    expect(app).toBeDefined(); // AAA_Assert 
+    expect(app).toBeDefined(); // AAA_Assert
   });
 
   it(`should have as instance 'app'`, () => {
-    expect(app).toBeInstanceOf(AppComponent); // AAA_Assert 
-  }); 
+    expect(app).toBeInstanceOf(AppComponent); // AAA_Assert
+  });
 
   // 1.2. tests within hooks
   it(`should have as title 'test-angular-ten'`, () => {
