@@ -1,11 +1,11 @@
-import { EventEmitter } from '@angular/core';
+import { EventEmitter, Output } from '@angular/core';
 
 export class EmitterComponent {
   totalVotes = 0;
-  voteChanged = new EventEmitter();
+  @Output() totalVotesEmmiter = new EventEmitter<null | number>();
 
   upVote() {
     this.totalVotes++;
-    this.voteChanged.emit(this.totalVotes);
+    this.totalVotesEmmiter.emit(this.totalVotes);
   }
 }

@@ -1,12 +1,20 @@
-import { EmitterComponent } from './emitter.component'; 
+import { EmitterComponent } from './emitter.component';
 
-xdescribe('EmitterComponent{}', () => {
-  var component: EmitterComponent; 
+describe('EmitterComponent{}', () => {
 
-  beforeEach(() => {
-    component = new EmitterComponent();
+  // owner THIS !
+  beforeEach(function () {
+    this.component = new EmitterComponent();
   });
 
-  it('', () => {
+  it('should increase "totalVotes" when upVoted()', function () {
+    let emitedVotes: null | number;
+    this.component.totalVotesEmmiter.subscribe(
+      (tv: null | number) => (emitedVotes = tv)
+    );
+
+    this.component.upVote();
+
+    expect(emitedVotes).toBe(1);
   });
 });
