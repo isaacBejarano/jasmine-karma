@@ -18,3 +18,4 @@
 [0117/215704.713:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
 [0117/215704.713:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
 [0117/215704.713:ERROR:exception_snapshot_win.cc(99)] thread ID 4784 not found in process
+[0118/020657.289:ERROR:directory_reader_win.cc(43)] FindFirstFile: El sistema no puede encontrar la ruta especificada. (0x3)
