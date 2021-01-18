@@ -10,8 +10,9 @@ export class TodosComponent {
     this.service.getTodos().subscribe((t) => (this.todos = t));
   }
 
-  add() {
-    this.service.add({ title: '... ' }).subscribe(
+  add(object: object) {
+    // { title: '... ' }
+    this.service.add(object).subscribe(
       (t) => this.todos.push(t),
       (err) => (this.message = err)
     );
