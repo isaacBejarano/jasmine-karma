@@ -1,8 +1,7 @@
-
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 
-export class TodoFormComponent { 
-  form: FormGroup; 
+export class FormComponent {
+  form: FormGroup;
 
   constructor(fb: FormBuilder) {
     this.form = fb.group({

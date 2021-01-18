@@ -1,25 +1,24 @@
+import { TodoService } from './todo.service';
 
-// import { TodoService } from './todo.service'
+export class TodosComponent {
+  todos: object[] = [];
+  message: string;
 
-// export class TodosComponent { 
-//   todos: any[] = [];
-//   message; 
+  constructor(private service: TodoService) {}
 
-//   constructor(private service: TodoService) {}
+  ngOnInit() {
+    this.service.getTodos().subscribe((t) => (this.todos = t));
+  }
 
-//   ngOnInit() { 
-//     this.service.getTodos().subscribe(t => this.todos = t);
-//   }
+  add(object: object) {
+    // { title: '... ' }
+    this.service.add(object).subscribe(
+      (t) => this.todos.push(t),
+      (err) => (this.message = err)
+    );
+  }
 
-//   add() { 
-//     var newTodo = { title: '... ' };
-//     this.service.add(newTodo).subscribe(
-//       t => this.todos.push(t),
-//       err => this.message = err);
-//   }
-
-//   delete(id) {
-//     if (confirm('Are you sure?'))
-//       this.service.delete(id).subscribe();
-//   }  
-// }
+  delete(id: string) {
+    if (confirm('Are you sure?')) this.service.delete(id).subscribe();
+  }
+}

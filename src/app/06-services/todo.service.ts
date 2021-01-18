@@ -1,19 +1,44 @@
-// import { HttpClient } from '@angular/common/http';
-// import 'rxjs/add/operator/map';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
-// export class TodoService { 
-//   constructor(private http: HttpClient) { 
-//   }
+@Injectable({
+  providedIn: 'root',
+})
+export class TodoService {
+  constructor(private http: HttpClient) {}
 
-//   add(todo) {
-//     return this.http.post('...', todo).map(r => r.json());
-//   }
+  getTodos(): Observable<object[]> {
+    return this.http
+      .get('...', {
+        responseType: 'json',
+      })
+      .pipe(
+        //
+        map((r: object[]) => r.map((any: object) => any))
+      );
+  }
 
-//   getTodos() { 
-//     return this.http.get('...').map(r => r.json());
-//   }
+  add(todo: object): Observable<object[]> {
+    return this.http
+      .post('...', todo, {
+        responseType: 'json',
+      })
+      .pipe(
+        //
+        map((r: object[]) => r.map((any: object) => any))
+      );
+  }
 
-//   delete(id) {
-//     return this.http.delete('...').map(r => r.json());
-//   }
-// }
+  delete(id: string): Observable<object[]> {
+    return this.http
+      .delete(`...${id}`, {
+        responseType: 'json',
+      })
+      .pipe(
+        //
+        map((r: object[]) => r.map((any: object) => any))
+      );
+  }
+}

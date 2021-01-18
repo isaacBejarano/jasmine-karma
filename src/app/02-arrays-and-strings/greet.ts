@@ -1,5 +1,3 @@
-type greetable = string | number | undefined;
-
-const greet = (name: greetable): string => 'Welcome' + name;
+const greet = (name: any = ''): string => 'Welcome ' + name;
 
 export { greet };
